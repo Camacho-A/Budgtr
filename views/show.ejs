@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budgtr Show </title>
+    <link rel="stylesheet" href="/public/normalize.css">
+    <link rel="stylesheet" href="/public/skeleton.css">
+</head>
+<body>
+    <div class="container">
+      
+        <h1>
+            <%=budgets.name %>
+        </h1>
+        <a href="/budget"><button>Back</button></a>
+        <h5>Date:</h5>
+        <p><%=budgets.date %> </p>
+        <h5>Name:</h5>
+        <p><%=budgets.name %> </p>
+        <h5>From:</h5>
+        <p><%=budgets.from %> </p>
+        <h5>Amount:</h5>
+        <p>$<%=budgets.amount %> </p>
+        <h5>Tags:</h5>
+        <p><%=budgets.tags %> </p>
+   
+    </div>
+    
+</body>
+</html>
