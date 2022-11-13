@@ -4,13 +4,18 @@ const morgan = require("morgan")
 const methodOverride = require("method-override")
 const budget = require("./models/budget")
 
+const PORT = process.env.PORT || 3000 
+
 
 const app = express()
 
 
 //  Index Routes
 app.get("/budget", (req, res) => {
-    res.render("index.ejs")
+    res.render("index.ejs",
+        {
+            allBudget: budget
+        })
 })
 
 // // Show Route
@@ -29,7 +34,7 @@ app.get("/budget", (req, res) => {
 
 // })
 
-const PORT = process.env.PORT || 3000 
+
 app.listen(PORT, () => {
 	console.log(`Listening on port ${PORT}`)
 })
