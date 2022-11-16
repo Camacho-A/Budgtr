@@ -9,8 +9,30 @@
     <link rel="stylesheet" href="/public/skeleton.css">
 </head>
 <body>
+
+    <!-- trying to change the color based on the amount -->
+    <%
+    let bankAccount = 0;
+    for (let i = 0; i< allBudgets.length; i++)
+    {
+      bankAccount += parseInt(allBudgets[i].amount)
+    }
+    %>
+
+    <% function total(){ %>
+        <% if (bankAccount < 0) { %>
+            <style>body {background-color: #FF6961;}</style>
+        <% } else { %>
+            <style>body {background-color: #77DD77;}</style>
+    <%    }}
+    
+    total();
+    %>
+
     <div class="container">
         <h1>Budgtr ALL</h1>
+        <a href="/budget/new"><button>Add New Item</button></a>
+
         <% for(let i = 0; i < allBudgets.length; i++) { %>
             <table>
              <tr>
@@ -27,7 +49,8 @@
                 </tr>
             </table>
             <% } %>
-            
+
+        <h5>Bank Account Total: $<%=bankAccount%>.00 </h5>
 
     </div>
     
